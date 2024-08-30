@@ -17,12 +17,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+Route::get('/home', function () {
+    return Inertia::render('Home');
 });
 
 Route::get('/', function(){
-    return Inertia::render('Dashboard');
+    return Inertia::render('Home');
 });
+
+Route::get('/courses', function(){
+    return Inertia::render('Courses');
+});
+
 
 require __DIR__ . '/auth.php';

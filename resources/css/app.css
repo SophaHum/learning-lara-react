@@ -45,3 +45,50 @@
     @apply font-heading;
   }
 }
+
+/* globals.css */
+:root {
+    --background: #ffffff; /* Light background */
+    --foreground: #000000; /* Light text */
+    --background-color: #ffffff; /* Light background */
+    --text-color: #000000; /* Light text */
+    --border-color: #e5e7eb; /* Light border color */
+}
+
+.dark {
+    --background: #1a202c; /* Dark background */
+    --foreground: #ffffff; /* Dark text */
+    --background-color: #1a202c; /* Dark background */
+    --text-color: #ffffff; /* Dark text */
+    --border-color: #4b5563; /* Dark border color */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.main-content {
+    border: 1px solid var(--border-color);
+    padding: 1rem; /* Adjust padding as needed */
+    border-radius: 0.5rem; /* Optional: for rounded corners */
+}
+
+/* Additional styles for dark mode */
+.dark .main-content {
+    border-color: var(--border-color);
+}
+
+/* Add more specific styles as needed */
+
+.bg-popover {
+    background-color: var(--background);
+}
+
+.text-popover-foreground {
+    color: var(--foreground);
+}
+
+.dropdown-item:hover {
+    background-color: gray; /* Adjust as needed */
+}

@@ -4,7 +4,7 @@ import { fontFamily,defaultTheme } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class",
+  darkMode: 'class', // Ensure this is set to 'class'
   content: [
     "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     "./storage/framework/views/*.php",
