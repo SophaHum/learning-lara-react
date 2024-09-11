@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isFrontendDropdownOpen, setIsFrontendDropdownOpen] = useState(false);
     const [isBackendDropdownOpen, setIsBackendDropdownOpen] = useState(false);
     const [isCICDDropdownOpen, setIsCICDDropdownOpen] = useState(false);
-    
+
     const frontendDropdownRef = useRef<HTMLDivElement>(null);
     const backendDropdownRef = useRef<HTMLDivElement>(null);
     const cicdDropdownRef = useRef<HTMLDivElement>(null);
@@ -92,14 +92,14 @@ const Navbar = () => {
                                     </svg>
                                 </button>
                                 {isBackendDropdownOpen && (
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                                        <Link href="/tutorial/php" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">PHP</Link>
-                                        <Link href="/tutorial/golang" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Golang</Link>
-                                        <Link href='/tutorial/nodejs' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">NodeJS</Link>
-                                        <Link href="/tutorial/javascript" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">JavaScript</Link>
-                                        <Link href='/tutorial/typescript' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">TypeScript</Link>
-                                        <Link href="/tutorial/python" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Python</Link>
-                                        <Link href="/tutorial/java" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Java</Link>
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-black rounded-md shadow-lg py-1 z-10">
+                                        <Link href="/tutorial/php" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">PHP</Link>
+                                        <Link href="/tutorial/golang" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Golang</Link>
+                                        <Link href='/tutorial/nodejs' className="block px-4 py-2 text-sm text-white hover:bg-gray-700">NodeJS</Link>
+                                        <Link href="/tutorial/javascript" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">JavaScript</Link>
+                                        <Link href='/tutorial/typescript' className="block px-4 py-2 text-sm text-white hover:bg-gray-700">TypeScript</Link>
+                                        <Link href="/tutorial/python" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Python</Link>
+                                        <Link href="/tutorial/java" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Java</Link>
                                     </div>
                                 )}
                             </div>

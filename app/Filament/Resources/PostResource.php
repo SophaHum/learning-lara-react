@@ -9,7 +9,7 @@ use Filament\Forms\Form;
 use Filament\Forms;
 use App\Models\Post;
 use App\Filament\Resources\PostResource\Pages;
-
+use App\Models\Tag;
 
 class PostResource extends Resource
 {
@@ -24,15 +24,24 @@ class PostResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image(),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(255),
-                   Forms\Components\Select::make('user_id')
-                    ->relationship('user', 'name'),
+                    // post_tag table relationship
+                Forms\Components\Select::make('tag_id')
+                ->required()
+                ->label('Tags')
+                ->options(Tag::all()->pluck('name', 'id'))
+                ->searchable(),
+                Forms\Components\Select::make('user_id')
+                ->label('Author')
+                    ->required()
+                    ->options(Post::all()->pluck('user.name', 'user.id'))
+                    ->searchable(),
             ]);
     }
 
@@ -42,8 +51,8 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('content')
-                    ->limit(50),
+                // Tables\Columns\TextColumn::make('content')
+                //     ->limit(50),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
